@@ -1,10 +1,9 @@
-// src/views/external-api.js
 
-import React, { useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import React, { useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const ExternalApi = () => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const serverUrl = process.env.REACT_APP_SERVER_URL;
 
   const { getAccessTokenSilently } = useAuth0();
@@ -31,7 +30,7 @@ const ExternalApi = () => {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
       const responseData = await response.json();
